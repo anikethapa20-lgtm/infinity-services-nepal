@@ -9,7 +9,7 @@ title: 'Corporate conferences and institutional programs',
 text: 'Planning, venue coordination, branding, registration, guest management, production, and on-site execution.'
 },
 {
-category: 'Printing & Production',
+category: 'Printing and Production',
 title: 'Business, publication, and event materials',
 text: 'Brochures, reports, books, certificates, banners, backdrops, signage, packaging, and promotional materials.'
 },
@@ -19,7 +19,7 @@ title: 'Group, corporate, and event travel',
 text: 'Tickets, accommodation, transportation, itineraries, delegations, airport support, and local coordination.'
 },
 {
-category: 'Branding & Marketing',
+category: 'Branding and Marketing',
 title: 'Campaigns, identities, and promotional support',
 text: 'Brand strategy, graphic design, advertising materials, social content, campaign planning, and launch support.'
 },
@@ -36,10 +36,14 @@ text: 'Projects combining events, printing, travel, promotion, branding, logisti
 ]
 
 return (
-<> <section className="page-hero"> <div className="container"> <span className="eyebrow">
-Our Work </span>
+<>
 
-```
+
+
+Our Work
+
+
+
       <h1>
         Thoughtful planning. Professional delivery.
       </h1>
@@ -91,7 +95,7 @@ Our Work </span>
     <div className="container two-col">
       <div>
         <span className="eyebrow">
-          Our approach
+          Our Approach
         </span>
 
         <h2>
@@ -101,7 +105,7 @@ Our Work </span>
 
       <div>
         <p className="lead">
-          We begin by understanding the client’s goals, audience,
+          We begin by understanding the client goals, audience,
           budget, timeline, and expected result.
         </p>
 
@@ -123,8 +127,14 @@ Our Work </span>
 
       <div className="process-grid">
         <article>
-          <span>01</span>
-          <h3>Understand</h3>
+          <span>
+            01
+          </span>
+
+          <h3>
+            Understand
+          </h3>
+
           <p>
             We listen to the purpose, requirements, timeline,
             audience, and expected outcome.
@@ -132,8 +142,14 @@ Our Work </span>
         </article>
 
         <article>
-          <span>02</span>
-          <h3>Plan</h3>
+          <span>
+            02
+          </span>
+
+          <h3>
+            Plan
+          </h3>
+
           <p>
             We organize the services, schedule, budget, vendors,
             responsibilities, and delivery plan.
@@ -141,8 +157,14 @@ Our Work </span>
         </article>
 
         <article>
-          <span>03</span>
-          <h3>Coordinate</h3>
+          <span>
+            03
+          </span>
+
+          <h3>
+            Coordinate
+          </h3>
+
           <p>
             We manage production, communication, logistics,
             suppliers, and project details.
@@ -150,8 +172,14 @@ Our Work </span>
         </article>
 
         <article>
-          <span>04</span>
-          <h3>Deliver</h3>
+          <span>
+            04
+          </span>
+
+          <h3>
+            Deliver
+          </h3>
+
           <p>
             We complete the project professionally and provide
             support through final execution.
@@ -188,9 +216,17 @@ Our Work </span>
       </div>
 
       <div className="award-mark">
-        <small>GLOBAL</small>
-        <strong>AUTHORS</strong>
-        <span>AWARD 2026</span>
+        <small>
+          GLOBAL
+        </small>
+
+        <strong>
+          AUTHORS
+        </strong>
+
+        <span>
+          AWARD 2026
+        </span>
       </div>
     </div>
   </section>
@@ -199,11 +235,11 @@ Our Work </span>
     <div className="container cta-simple">
       <div>
         <span className="eyebrow">
-          Plan your next project
+          Plan Your Next Project
         </span>
 
         <h2>
-          Let’s create something meaningful together.
+          Let us create something meaningful together.
         </h2>
       </div>
 
@@ -216,7 +252,6 @@ Our Work </span>
     </div>
   </section>
 </>
-```
 
 )
 }
