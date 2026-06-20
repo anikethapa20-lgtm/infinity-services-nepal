@@ -36,7 +36,7 @@ text: 'Projects combining events, printing, travel, promotion, branding, logisti
 ]
 
 return (
-<>
+
 
 
 
@@ -251,7 +251,7 @@ Our Work
       </Link>
     </div>
   </section>
-</>
+</div>
 
 )
 }
