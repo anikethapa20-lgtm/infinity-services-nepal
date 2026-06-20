@@ -926,163 +926,187 @@ blockquote {
   }
 }
 
-/* Light and dark mode */
+/* Semi-dark light theme */
 
 :root {
   color-scheme: light;
-}
-
-html[data-theme='dark'] {
-  color-scheme: dark;
-
   --ink: #eef4ef;
-  --deep: #d7eadb;
-  --green: #9bcf79;
-  --lime: #c8df58;
-  --gold: #d8bd82;
-  --ivory: #111914;
-  --soft: #17231a;
-  --white: #0c120e;
-  --muted: #a8b6ab;
-  --line: rgba(232, 243, 234, 0.12);
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+  --deep: #dce9df;
+  --green: #8fcf74;
+  --lime: #c3db57;
+  --gold: #d1b66f;
+  --ivory: #18211b;
+  --soft: #202c23;
+  --white: #111814;
+  --muted: #aebbb1;
+  --line: rgba(235, 244, 237, 0.12);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
 }
 
-body,
-.site-header,
-.hero,
-.page-hero,
-.ivory,
-.soft,
-.service-card,
-.mission-grid article,
-.detail-grid article,
-.work-card,
-.contact-form,
-.contact-info-grid article,
-.hero-visual-card,
-.hero-service-item,
-.hero-panel,
-.stat-grid div,
-.category-list div,
-.award-highlight-grid article {
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.theme-toggle {
-  display: inline-flex;
-  width: 42px;
-  height: 42px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--ivory);
-  color: var(--ink);
-  cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-2px);
-  border-color: var(--green);
-}
-
-html[data-theme='dark'] body {
-  background: #0c120e;
+body {
+  background: #111814;
   color: var(--ink);
 }
 
-html[data-theme='dark'] .site-header {
-  background: rgba(12, 18, 14, 0.92);
+.site-header {
+  background: rgba(17, 24, 20, 0.96);
+  border-bottom-color: var(--line);
 }
 
-html[data-theme='dark'] .hero {
+.brand img,
+.footer-logo {
+  filter: brightness(1.08) saturate(1.05);
+}
+
+.nav-links a {
+  color: #edf3ee;
+}
+
+.nav-links a.active:not(.btn),
+.nav-links a:hover:not(.btn) {
+  color: var(--lime);
+}
+
+.hero {
   background:
     radial-gradient(
       circle at 82% 20%,
-      rgba(155, 207, 121, 0.18),
+      rgba(143, 207, 116, 0.16),
       transparent 28%
     ),
     linear-gradient(
       135deg,
-      #0c120e,
-      #121c15 58%,
-      #17231a
+      #121915,
+      #19231c 58%,
+      #202d23
     );
 }
 
-html[data-theme='dark'] .page-hero {
+.hero-copy p,
+.page-hero p,
+.award-hero p,
+.lead,
+.section-head p,
+.service-card p,
+.work-card p,
+.value-grid p,
+.detail-grid ul,
+.process-grid p {
+  color: #b9c5bc;
+}
+
+.hero-visual-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(28, 39, 31, 0.97),
+      rgba(22, 31, 25, 0.95)
+    );
+  border-color: var(--line);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.hero-service-item,
+.hero-panel,
+.stat-grid div,
+.service-card,
+.mission-grid article,
+.detail-grid article,
+.work-card,
+.process-grid article,
+.contact-form,
+.contact-info-grid article,
+.award-highlight-grid article,
+.category-list div {
+  background: #18211b;
+  border-color: var(--line);
+}
+
+.hero-service-item span {
+  background: #263329;
+  color: var(--lime);
+}
+
+.hero-visual-top strong,
+.stat-grid strong,
+.trust-grid strong {
+  color: #dce9df;
+}
+
+.trust-strip,
+.ivory {
+  background: #151e18;
+}
+
+.soft {
+  background: #1b271f;
+}
+
+.page-hero {
   background:
     radial-gradient(
       circle at 85% 20%,
-      rgba(155, 207, 121, 0.15),
+      rgba(143, 207, 116, 0.13),
       transparent 25%
     ),
     linear-gradient(
       135deg,
-      #0c120e,
-      #17231a
+      #111814,
+      #1b271f
     );
 }
 
-html[data-theme='dark'] .hero-copy p,
-html[data-theme='dark'] .page-hero p,
-html[data-theme='dark'] .award-hero p,
-html[data-theme='dark'] .lead {
-  color: #bdc9c0;
+.btn {
+  background: #79b960;
+  border-color: #79b960;
+  color: #0c120e;
 }
 
-html[data-theme='dark'] .hero-visual-card,
-html[data-theme='dark'] .service-card,
-html[data-theme='dark'] .mission-grid article,
-html[data-theme='dark'] .detail-grid article,
-html[data-theme='dark'] .work-card,
-html[data-theme='dark'] .contact-form,
-html[data-theme='dark'] .contact-info-grid article,
-html[data-theme='dark'] .award-highlight-grid article,
-html[data-theme='dark'] .category-list div {
-  background: #111914;
+.btn.outline {
+  background: transparent;
+  border-color: #79b960;
+  color: #a9db91;
 }
 
-html[data-theme='dark'] .hero-service-item,
-html[data-theme='dark'] .hero-panel,
-html[data-theme='dark'] .stat-grid div {
-  background: rgba(23, 35, 26, 0.9);
+.btn.lime {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #111814;
 }
 
-html[data-theme='dark'] .btn.outline {
-  border-color: var(--green);
-  color: var(--green);
+.eyebrow {
+  color: #9dd884;
 }
 
-html[data-theme='dark'] .footer-logo,
-html[data-theme='dark'] .brand img {
-  filter: brightness(1.08);
+blockquote {
+  background: #18211b;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: #101713;
+  color: #eef4ef;
+  border-color: var(--line);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #7f8b82;
+}
+
+.theme-toggle {
+  display: none;
+}
+
+.footer {
+  background: #0a0f0c;
 }
 
 @media (max-width: 1000px) {
-  .nav-actions {
-    margin-left: auto;
-  }
-
   .nav-links {
-    background: var(--white);
-  }
-
-  html[data-theme='dark'] .nav-links {
-    background: #0c120e;
+    background: #111814;
   }
 }
