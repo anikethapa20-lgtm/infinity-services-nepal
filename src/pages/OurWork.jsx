@@ -58,7 +58,6 @@ return React.createElement(
 'div',
 null,
 
-```
 React.createElement(
   'section',
   { className: 'page-hero' },
