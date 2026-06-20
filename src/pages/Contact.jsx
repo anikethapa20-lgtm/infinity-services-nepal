@@ -66,25 +66,29 @@ try {
     })
   } else {
     const subject = encodeURIComponent(
-      `Website inquiry from ${form.name}`
+      'Website inquiry from ' + form.name
     )
 
     const body = encodeURIComponent(
-      `Name: ${form.name}
-```
+      [
+        'Name: ' + form.name,
+        'Email: ' + form.email,
+        'Phone: ' + form.phone,
+        'Organization: ' + form.organization,
+        'Service: ' + form.service,
+        '',
+        'Message:',
+        form.message
+      ].join('\n')
+    )
 
-Email: ${form.email}
-Phone: ${form.phone}
-Organization: ${form.organization}
-Service: ${form.service}
-
-Message:
-${form.message}`
-)
-
-```
     window.location.href =
-      `mailto:${company.email}?subject=${subject}&body=${body}`
+      'mailto:' +
+      company.email +
+      '?subject=' +
+      subject +
+      '&body=' +
+      body
 
     setStatus(
       'Your email application has been opened. Please send the prepared message.'
@@ -139,23 +143,29 @@ Contact Infinity Services </span>
 
         <div className="contact-info-grid">
           <article>
-            <small>Phone</small>
+            <small>
+              Phone
+            </small>
 
-            <a href={`tel:${company.phoneHref}`}>
+            <a href={'tel:' + company.phoneHref}>
               {company.phoneDisplay}
             </a>
           </article>
 
           <article>
-            <small>Email</small>
+            <small>
+              Email
+            </small>
 
-            <a href={`mailto:${company.email}`}>
+            <a href={'mailto:' + company.email}>
               {company.email}
             </a>
           </article>
 
           <article>
-            <small>Address</small>
+            <small>
+              Address
+            </small>
 
             <span>
               {company.address}
@@ -163,7 +173,9 @@ Contact Infinity Services </span>
           </article>
 
           <article>
-            <small>Business Hours</small>
+            <small>
+              Business Hours
+            </small>
 
             <span>
               Sunday–Friday
@@ -321,7 +333,7 @@ Contact Infinity Services </span>
       </div>
 
       <a
-        href={`tel:${company.phoneHref}`}
+        href={'tel:' + company.phoneHref}
         className="btn"
       >
         Call {company.phoneDisplay}
