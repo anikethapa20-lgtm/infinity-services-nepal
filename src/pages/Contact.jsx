@@ -139,9 +139,7 @@ Contact Infinity Services </span>
 
         <div className="contact-info-grid">
           <article>
-            <small>
-              Phone
-            </small>
+            <small>Phone</small>
 
             <a href={`tel:${company.phoneHref}`}>
               {company.phoneDisplay}
@@ -149,9 +147,7 @@ Contact Infinity Services </span>
           </article>
 
           <article>
-            <small>
-              Email
-            </small>
+            <small>Email</small>
 
             <a href={`mailto:${company.email}`}>
               {company.email}
@@ -159,9 +155,7 @@ Contact Infinity Services </span>
           </article>
 
           <article>
-            <small>
-              Address
-            </small>
+            <small>Address</small>
 
             <span>
               {company.address}
@@ -169,9 +163,7 @@ Contact Infinity Services </span>
           </article>
 
           <article>
-            <small>
-              Business Hours
-            </small>
+            <small>Business Hours</small>
 
             <span>
               Sunday–Friday
@@ -189,6 +181,7 @@ Contact Infinity Services </span>
         <div className="form-row">
           <label>
             Full Name
+
             <input
               type="text"
               name="name"
@@ -201,6 +194,7 @@ Contact Infinity Services </span>
 
           <label>
             Email Address
+
             <input
               type="email"
               name="email"
@@ -215,6 +209,7 @@ Contact Infinity Services </span>
         <div className="form-row">
           <label>
             Phone Number
+
             <input
               type="tel"
               name="phone"
@@ -226,6 +221,7 @@ Contact Infinity Services </span>
 
           <label>
             Organization
+
             <input
               type="text"
               name="organization"
@@ -238,6 +234,7 @@ Contact Infinity Services </span>
 
         <label>
           Service Required
+
           <select
             name="service"
             value={form.service}
@@ -276,6 +273,7 @@ Contact Infinity Services </span>
 
         <label>
           Project Details
+
           <textarea
             name="message"
             value={form.message}
