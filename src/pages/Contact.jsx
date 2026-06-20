@@ -18,12 +18,10 @@ const [submitting, setSubmitting] = useState(false)
 function handleChange(event) {
 const { name, value } = event.target
 
-```
 setForm((current) => ({
   ...current,
   [name]: value
 }))
-```
 
 }
 
@@ -32,7 +30,6 @@ event.preventDefault()
 setSubmitting(true)
 setStatus('')
 
-```
 try {
   if (supabase) {
     const { error } = await supabase
@@ -69,17 +66,19 @@ try {
       'Website inquiry from ' + form.name
     )
 
+    const bodyLines = [
+      'Name: ' + form.name,
+      'Email: ' + form.email,
+      'Phone: ' + form.phone,
+      'Organization: ' + form.organization,
+      'Service: ' + form.service,
+      '',
+      'Message:',
+      form.message
+    ]
+
     const body = encodeURIComponent(
-      [
-        'Name: ' + form.name,
-        'Email: ' + form.email,
-        'Phone: ' + form.phone,
-        'Organization: ' + form.organization,
-        'Service: ' + form.service,
-        '',
-        'Message:',
-        form.message
-      ].join('\n')
+      bodyLines.join('\n')
     )
 
     window.location.href =
@@ -91,11 +90,11 @@ try {
       body
 
     setStatus(
-      'Your email application has been opened. Please send the prepared message.'
+      'Your email application has opened. Please send the prepared message.'
     )
   }
 } catch (error) {
-  console.error(error)
+  console.error('Contact form error:', error)
 
   setStatus(
     'We could not submit the form. Please email or call us directly.'
@@ -103,15 +102,18 @@ try {
 } finally {
   setSubmitting(false)
 }
-```
 
 }
 
 return (
-<> <section className="page-hero"> <div className="container"> <span className="eyebrow">
-Contact Infinity Services </span>
+<>
 
-```
+
+
+Contact Infinity Services
+
+
+
       <h1>
         Let’s discuss your next project.
       </h1>
@@ -257,19 +259,19 @@ Contact Infinity Services </span>
               Select a service
             </option>
 
-            <option value="Printing, Packaging & Production">
+            <option value="Printing, Packaging and Production">
               Printing, Packaging & Production
             </option>
 
-            <option value="Event Planning & Management">
+            <option value="Event Planning and Management">
               Event Planning & Management
             </option>
 
-            <option value="Travel, Tours & Coordination">
+            <option value="Travel, Tours and Coordination">
               Travel, Tours & Coordination
             </option>
 
-            <option value="Marketing, Advertising & Branding">
+            <option value="Marketing, Advertising and Branding">
               Marketing, Advertising & Branding
             </option>
 
@@ -341,7 +343,6 @@ Contact Infinity Services </span>
     </div>
   </section>
 </>
-```
 
 )
 }
