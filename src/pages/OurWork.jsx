@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import MediaGallery from '../components/MediaGallery'
 
 export default function OurWork() {
   const projects = [
@@ -75,6 +76,8 @@ export default function OurWork() {
           </div>
         </div>
       </section>
+
+      <MediaGallery section="portfolio" limit={9} />
 
       <section className="section soft">
         <div className="container two-col">
