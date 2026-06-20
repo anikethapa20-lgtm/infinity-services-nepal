@@ -1,19 +1,52 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import {
   Facebook,
   Instagram,
   Linkedin,
   Menu,
+  Moon,
+  Sun,
   X
 } from 'lucide-react'
 import { company } from '../data'
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [theme, setTheme] = useState('light')
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem('infinity-theme')
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
+
+    const initialTheme =
+      savedTheme || (prefersDark ? 'dark' : 'light')
+
+    setTheme(initialTheme)
+    document.documentElement.setAttribute(
+      'data-theme',
+      initialTheme
+    )
+  }, [])
 
   function closeMenu() {
     setMenuOpen(false)
+  }
+
+  function toggleTheme() {
+    const nextTheme = theme === 'light' ? 'dark' : 'light'
+
+    setTheme(nextTheme)
+    document.documentElement.setAttribute(
+      'data-theme',
+      nextTheme
+    )
+    window.localStorage.setItem(
+      'infinity-theme',
+      nextTheme
+    )
   }
 
   return (
@@ -32,48 +65,74 @@ export default function Layout() {
             />
           </NavLink>
 
-          <button
-            type="button"
-            className="menu-btn"
-            onClick={() => setMenuOpen((current) => !current)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <div className="nav-actions">
+            <nav className={menuOpen ? 'nav-links open' : 'nav-links'}>
+              <NavLink to="/" onClick={closeMenu}>
+                Home
+              </NavLink>
 
-          <nav className={menuOpen ? 'nav-links open' : 'nav-links'}>
-            <NavLink to="/" onClick={closeMenu}>
-              Home
-            </NavLink>
+              <NavLink to="/about" onClick={closeMenu}>
+                About
+              </NavLink>
 
-            <NavLink to="/about" onClick={closeMenu}>
-              About
-            </NavLink>
+              <NavLink to="/services" onClick={closeMenu}>
+                Services
+              </NavLink>
 
-            <NavLink to="/services" onClick={closeMenu}>
-              Services
-            </NavLink>
+              <NavLink to="/our-work" onClick={closeMenu}>
+                Our Work
+              </NavLink>
 
-            <NavLink to="/our-work" onClick={closeMenu}>
-              Our Work
-            </NavLink>
+              <NavLink
+                to="/global-authors-award"
+                onClick={closeMenu}
+              >
+                Global Authors Award
+              </NavLink>
 
-            <NavLink
-              to="/global-authors-award"
-              onClick={closeMenu}
+              <NavLink
+                to="/contact"
+                className="btn small"
+                onClick={closeMenu}
+              >
+                Start a Project
+              </NavLink>
+            </nav>
+
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label={
+                theme === 'light'
+                  ? 'Switch to dark mode'
+                  : 'Switch to light mode'
+              }
+              title={
+                theme === 'light'
+                  ? 'Dark mode'
+                  : 'Light mode'
+              }
             >
-              Global Authors Award
-            </NavLink>
+              {theme === 'light' ? (
+                <Moon size={19} />
+              ) : (
+                <Sun size={19} />
+              )}
+            </button>
 
-            <NavLink
-              to="/contact"
-              className="btn small"
-              onClick={closeMenu}
+            <button
+              type="button"
+              className="menu-btn"
+              onClick={() =>
+                setMenuOpen((current) => !current)
+              }
+              aria-label="Toggle navigation menu"
+              aria-expanded={menuOpen}
             >
-              Start a Project
-            </NavLink>
-          </nav>
+              {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -91,8 +150,9 @@ export default function Layout() {
             />
 
             <p>
-              Printing, events, travel, marketing, branding, and
-              recognition programs planned and delivered from Kathmandu.
+              Printing, events, travel, marketing, branding,
+              and recognition programs planned and delivered
+              from Kathmandu.
             </p>
           </div>
 
